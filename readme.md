@@ -1,11 +1,11 @@
-# P422 Project (REPLACE ME)
+# P422 Project - Recipe Application
 
-Here, you should put your project proposal. It should be written in english text and describe what you intend to build along with any information necessary. Please use proper markdown formatting. You can find a guide here: [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
+My goal is to create a no muss, no fuss, no long winded story of self actualization preamble, recicipe application.
 
-Your project should have the following requirements met:
-
-* A server side component written with javascript that stores information in a database
-* A client side component written in Angular
-* At least four different interactive views for the client
-
-You may choose whatever kid of project you like within the ethical guidlines of the university. Commit your propasal to this file and we will discuss your project idea if it needs improvement.
+Features/Goals:
+* A database to hold recipes, with keys based on name, primary ingredients (ie. meats or signature vegitables), type of dish, regional/thematic flare (Mediterranean or etc.) 
+* A backend with data search functionality based on the keys.
+* A splash page with search and random selction based on above criteria. As well as an add.
+* A selection page based on search results.
+* A recipe page accessible through selection or random.
+* An add page accessible through the splash page, that allows new recipes to be added.
