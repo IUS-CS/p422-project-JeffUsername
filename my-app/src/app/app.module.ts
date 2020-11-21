@@ -7,6 +7,9 @@ import { SearchComponent } from './search/search.component';
 import { RandomComponent } from './random/random.component';
 import { SelectComponent } from './select/select.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +17,14 @@ import { RecipeComponent } from './recipe/recipe.component';
     SearchComponent,
     RandomComponent,
     SelectComponent,
-    RecipeComponent
+    RecipeComponent,
+    PageNotFoundComponent,
+    AddRecipeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,11 @@
 const e = require('express');
 let express = require('express');
 let router = express.Router();
-let Assign = require('./models/assignments');
+let Assign = require('./models/recipes');
 
 
-// /v1/assignments/
 //Get all
-router.route('/assignments')
+router.route('/recipe')
     .get(function (req, res) {
         Assign.all()
             .then((users) => {
@@ -31,15 +30,64 @@ router.route('/assignments')
 				res.status(200);
 				res.json(doc);
 			});
-	});
-//Get All for class
+    });
+router.route('/recipe/name/:name')   //by name
 
-// /v1/assignments/class/:className/:assignmentName
-router.route('/assignments/dishtype/:type/:assignmentName')   
-
-//Get single assignment
     .get(function (req, res) {
-        Assign.findOne().where({class: req.params.className, name: req.params.assignmentName}).exec()
+        Assign.findOne().where({name: req.params.name}).exec()
+            .then((assignment) => {
+                res.status(200);
+                res.json(assignment);
+            })
+            .catch((err) => {
+                res.status(404);
+                return res.json(err);
+            });
+    })
+router.route('/recipe/type/:type')   //by type
+
+    .get(function (req, res) {
+        Assign.find().where({type: req.params.type}).exec((err, classes) => {
+            if (err) {
+              res.status(500);
+              res.json(err);
+              return;
+            }
+            let ret = [];
+            for (let klass of classes) {
+              ret.push(klass.section);
+            }
+            res.status(200);
+            res.json(ret);
+          })
+        // Assign.find().where({type: req.params.type}).exec()
+        //     .then((assignment) => {
+        //         res.status(200);
+        //         res.json(assignment);
+        //     })
+        //     .catch((err) => {
+        //         res.status(404);
+        //         return res.json(err);
+        //     });
+    })
+router.route('/recipe/primeIngredient/:ingredient')   //by ingredient
+
+    .get(function (req, res) {
+        Assign.findOne().where({ingredient: req.params.primeIngredient}).exec()
+            .then((assignment) => {
+                res.status(200);
+                res.json(assignment);
+            })
+            .catch((err) => {
+                res.status(404);
+                return res.json(err);
+            });
+    })
+// /v1/assignments/class/:className/:assignmentName
+router.route('/recipe/type/:type/primeIngredient/:ingredient')   //by tpe and ingredient
+
+    .get(function (req, res) {
+        Assign.find().where({dishtype: req.params.type, primeingredient: req.params.ingredient}).exec()
             .then((assignment) => {
                 res.status(200);
                 res.json(assignment);
@@ -51,7 +99,7 @@ router.route('/assignments/dishtype/:type/:assignmentName')
     })
 //Delete single assignment
     .delete(function (req, res) {
-        Assign.findOne().where({class: req.params.name, name: req.params.assignmentName})
+        Assign.findOne().where({dishtype: req.params.type, ingredie: req.params.primeIngredient})
         .exec((err, doc) => {
             if (err) {
                 res.status(404);

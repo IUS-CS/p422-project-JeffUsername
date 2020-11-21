@@ -1,1 +1,23 @@
-<p>search works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Search by Recipe: </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul ngbNav routerLinkActive="active">
+        <li  ngbNavItem="search">
+          <a ngbNavLinkclass class="nav-link" routerLink="search">Name</a>
+        </li>
+        <li ngbNavItem="random">
+          <a gbNavLinkclass class="nav-link" routerLink="random">Type</a>
+        </li>
+        <li ngbNavItem="random">
+            <a gbNavLinkclass class="nav-link" routerLink="random">Primay Ingredient</a>
+          </li>
+          <li ngbNavItem="random">
+            <a gbNavLinkclass class="nav-link" routerLink="random">Type and Primay Ingredient</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
