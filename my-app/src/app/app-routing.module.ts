@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: 'select/:name', component: SelectComponent},
   {path: 'select/:type', component: SelectComponent},
   {path: 'select/:ingredient', component: SelectComponent},
-  {path: 'select:type/:ingredient', component: SelectComponent},
+  {path: 'select/:type/:ingredient', component: SelectComponent},
   {path: 'random', component: RandomComponent},
   {path: 'random/recipe', component: RandomComponent},
   {path: 'recipe', component: RecipeComponent},

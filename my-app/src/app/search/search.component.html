@@ -6,17 +6,17 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul ngbNav routerLinkActive="active">
-        <li  ngbNavItem="search">
-          <a ngbNavLinkclass class="nav-link" routerLink="search">Name</a>
+        <li  ngbNavItem="select">
+          <a ngbNavLinkclass class="nav-link" routerLink="select">Name</a>
         </li>
-        <li ngbNavItem="random">
-          <a gbNavLinkclass class="nav-link" routerLink="random">Type</a>
+        <li ngbNavItem="select/:type">
+          <a gbNavLinkclass class="nav-link" routerLink="select/:type">Type</a>
         </li>
-        <li ngbNavItem="random">
-            <a gbNavLinkclass class="nav-link" routerLink="random">Primay Ingredient</a>
+        <li ngbNavItem="select/:ingredient">
+            <a gbNavLinkclass class="nav-link" routerLink="select/:ingredient">Primay Ingredient</a>
           </li>
-          <li ngbNavItem="random">
-            <a gbNavLinkclass class="nav-link" routerLink="random">Type and Primay Ingredient</a>
+          <li ngbNavItem="select:type/:ingredient">
+            <a gbNavLinkclass class="nav-link" routerLink="select:type/:ingredient">Type and Primay Ingredient</a>
           </li>
       </ul>
     </div>
