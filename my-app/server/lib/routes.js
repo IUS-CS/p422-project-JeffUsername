@@ -8,9 +8,16 @@ let Assign = require('./models/recipes');
 router.route('/recipe')
     .get(function (req, res) {
         Assign.all()
-            .then((users) => {
+            .then((recipes) => {
+                // res.status(200);
+                // res.json(users);
+                let ret = [];
+                for (let recipe of recipes) {
+                  ret.push(recipe);
+                }
                 res.status(200);
-                res.json(users);
+                //console.log(ret)
+                return res.json(ret);
             })
             .catch((err) => {
                 res.status(500);
