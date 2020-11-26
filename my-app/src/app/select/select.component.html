@@ -1,7 +1,7 @@
 
 <div>
     <h1>Recipes</h1>
-    <ul *ngFor="let name of (recipeNames | async)">
-      <li><a [routerLink]="['/recipe', name]">{{name}}</a></li>
+    <ul *ngFor="let recipeName of (recipeNames | async)">
+      <li><a [routerLink]="['/recipe', recipeName]">{{recipeName.name}}</a></li>
     </ul>
   </div>

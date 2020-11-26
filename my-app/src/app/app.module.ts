@@ -11,6 +11,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SelectByTypeComponent } from './select-by-type/select-by-type.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SelectByIngredientComponent } from './select-by-ingredient/select-by-ingredient.component';
+import { SelectByTypeIngredComponent } from './select-by-type-ingred/select-by-type-ingred.component';
+import { SelectByNameComponent } from './select-by-name/select-by-name.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,19 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     SelectComponent,
     RecipeComponent,
     PageNotFoundComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    SelectByTypeComponent,
+    SelectByIngredientComponent,
+    SelectByTypeIngredComponent,
+    SelectByNameComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

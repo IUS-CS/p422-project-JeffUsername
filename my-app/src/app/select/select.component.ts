@@ -15,7 +15,9 @@ export class SelectComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.recipeNames = this.recipeDataService.getRecipeNames();
+    
   }
 
 }

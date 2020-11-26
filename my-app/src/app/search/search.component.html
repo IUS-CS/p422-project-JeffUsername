@@ -6,17 +6,20 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul ngbNav routerLinkActive="active">
+        <li  ngbNavItem="select">
+          <a ngbNavLinkclass class="nav-link" routerLink="/select">All</a>
+        </li>
         <li  ngbNavItem="select/:name">
           <a ngbNavLinkclass class="nav-link" routerLink="/select/:name">Name</a>
         </li>
-        <li ngbNavItem="select/:type">
-          <a gbNavLinkclass class="nav-link" routerLink="select/:type">Type</a>
+        <li ngbNavItem="select-by-type">
+          <a gbNavLinkclass class="nav-link" routerLink="/select-by-type">Type</a>
         </li>
-        <li ngbNavItem="select/:ingredient">
-            <a gbNavLinkclass class="nav-link" routerLink="select/:ingredient">Primay Ingredient</a>
+        <li ngbNavItem="select-by-ingredient">
+            <a gbNavLinkclass class="nav-link" routerLink="/select-by-ingredient">Primay Ingredient</a>
           </li>
-          <li ngbNavItem="select:type/:ingredient">
-            <a gbNavLinkclass class="nav-link" routerLink="select:type/:ingredient">Type and Primay Ingredient</a>
+          <li ngbNavItem="select-by-type-ingred">
+            <a gbNavLinkclass class="nav-link" routerLink="/select-by-type-ingred">Type and Primay Ingredient</a>
           </li>
       </ul>
     </div>
