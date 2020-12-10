@@ -79,6 +79,53 @@ router.route('/recipe/name/:name')   //by name
                     });
         });
     })
+
+router.route('/recipe/random') //get a random item
+    .get(function (req, res) {
+        Assign.all()
+            .then((recipes) => {
+                // res.status(200);
+                // res.json(users);
+                let find = [];
+                for (let recipe of recipes) {
+                  find.push(recipe);
+                }
+                //console.log(ret)
+                let ret=[]
+                let rand =find[Math.floor(Math.random()*find.length)];
+                ret.push(rand);
+                res.status(200);
+                return res.json(ret);
+            })
+            .catch((err) => {
+                res.status(500);
+                res.json(err);
+            });
+    })
+router.route('/recipe/names/:name')
+    .get(function (req, res) {
+        Assign.find().where({name: req.params.name}).exec((err, recipes) => {
+            if (err) {
+            res.status(500);
+            res.json(err);
+            return;
+            }
+            if(recipes===null)
+            {
+                res.status(404);
+                res.json("not found");
+                return;
+            }
+            let ret = [];
+            for (let recipe of recipes) {
+            
+            ret.push(recipe);
+            }
+            res.status(200);
+            res.json(ret);
+        })
+    })
+
 router.route('/recipe/type/:type')   //by type
 
     .get(function (req, res) {
@@ -96,12 +143,14 @@ router.route('/recipe/type/:type')   //by type
             }
             let ret = [];
             for (let recipe of recipes) {
+            
               ret.push(recipe);
             }
             res.status(200);
             res.json(ret);
           })
     })
+    
 router.route('/recipe/primeIngredient/:primeIngredient')   //by ingredient
 
     .get(function (req, res) {

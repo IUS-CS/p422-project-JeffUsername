@@ -1,1 +1,17 @@
-<p>select-by-name works!</p>
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" novalidate>
+ 
+    <p>
+      <label for="name">Name </label>
+      <input type="text" id="name" name="name" formControlName="name">
+    </p>
+    <p>
+      <button type="submit" >Submit</button>
+    </p>
+  </form>
+  
+  <div *ngIf = "show">
+      <h1>Recipes</h1>
+      <ul *ngFor="let recipeByName of (recipeByNames | async)">
+        <li><a [routerLink]="['/recipe', recipeByName]">{{recipeByName.name}}</a></li>
+      </ul>
+  </div>

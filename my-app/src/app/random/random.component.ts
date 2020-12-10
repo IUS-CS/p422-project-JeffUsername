@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {RecipeDataService} from '../recipe-data.service';
+import {Recipe, RecipeDataService} from '../recipe-data.service';
 import {Observable} from 'rxjs';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-random',
@@ -8,7 +9,7 @@ import {Observable} from 'rxjs';
   styleUrls: ['./random.component.scss']
 })
 export class RandomComponent implements OnInit {
-  recipeNames: Observable<string[]>;
+  randRecipes: Observable<string[]>;
   
   constructor(
     private recipeDataService: RecipeDataService
@@ -16,7 +17,8 @@ export class RandomComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.recipeNames =this.recipeDataService.getRecipeNames();
+    this.randRecipes =this.recipeDataService.getRandom();
+    
     
   }
 

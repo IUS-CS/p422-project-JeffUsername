@@ -20,20 +20,28 @@ export class RecipeDataService {
 
 
   private url = '/v1/recipe';
-
-  public getRecipe(name: string): Observable<Recipe> {
+  
+  public getRandom(): Observable<string[]> {
+    let temp = this.url+'/random';
+    
+    return this.http.get<string[]>(temp);
+  }
+  public getRecipe(name: string): Observable<Recipe> { //gets name of individual recipe
     let temp = this.url+'/name';
-    //return this.http.get<Recipe>(`${this.url}/${name}`);
+    
     return this.http.get<Recipe>(`${temp}/${name}`);
   }
   
-
-  public getRecipeNames(): Observable<string[]> {
+  public getRecipeNames(): Observable<string[]> { //gets names for full db dump
     //console.log(this.url);
     return this.http.get<string[]>(this.url);
   }
-  
-  public getRecipeNamesbyType(type: string): Observable<string[]> {
+
+  public getRecipeNamesbyName(name: string): Observable<string[]> { //is a dumb work around solution
+    return this.http.get<string[]>(`${this.url}/names/${name}`);
+  }
+
+  public getRecipeNamesbyType(type: string): Observable<string[]> { //
     //let temp = this.url+'/type/';//this.http.get<Recipe>(`${temp}/${name}`);
     //console.log(temp);
     console.log(this.http.get<string[]>(this.url) + "this is what you want")

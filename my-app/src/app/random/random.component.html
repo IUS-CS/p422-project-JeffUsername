@@ -1,7 +1,6 @@
 <p>random works!</p>
 <div>
-    <h1>Recipes</h1>
-    <ul *ngFor="let recipeName of (recipeNames | async)">
-      <li><a [routerLink]="['/recipe', recipeName]">{{recipeName.name}}</a></li>
-    </ul>
-  </div>
+  <ul *ngFor="let randRecipe of (randRecipes | async)">
+    <li><a [routerLink]="['/recipe', randRecipe]">{{randRecipe.name}}</a></li>
+  </ul>
+</div>
