@@ -1,4 +1,6 @@
+<div class="card">
 <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" novalidate>
+  <h3>Search by Type and Primary Ingredient: </h3>
     <p>
         <label for="type">Type </label>
         <input type="text" id="type" name="type" formControlName="type">
@@ -9,7 +11,7 @@
       <input type="text" id="primeIngredient" name="primeIngredient" formControlName="primeIngredient">
     </p>
     <p>
-      <button type="submit" >Submit</button>
+      <input class="btn btn-primary" type="submit" value="Submit">
     </p>
   </form>
   
@@ -19,3 +21,4 @@
         <li><a [routerLink]="['/recipe', recipeByTIName]">{{recipeByTIName.name}}</a></li>
       </ul>
   </div>
+</div>

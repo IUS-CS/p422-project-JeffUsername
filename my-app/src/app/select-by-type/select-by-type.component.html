@@ -1,20 +1,18 @@
-
-
-
-<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" novalidate>
- 
-  <p>
-    <label for="type">Type </label>
-    <input type="text" id="type" name="type" formControlName="type">
-  </p>
-  <p>
-    <button type="submit" >Submit</button>
-  </p>
-</form>
-
-<div *ngIf = "show">
+<div class="card">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" novalidate>
+    <h3>Search by Type: </h3>
+    <p>
+      <label for="type">Type </label>
+      <input type="text" id="type" name="type" formControlName="type">
+    </p>
+    <p>
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </p>
+  </form>
+  <div *ngIf="show">
     <h1>Recipes</h1>
     <ul *ngFor="let recipeByTypeName of (recipeByTypeNames | async)">
       <li><a [routerLink]="['/recipe', recipeByTypeName]">{{recipeByTypeName.name}}</a></li>
     </ul>
+  </div>
 </div>

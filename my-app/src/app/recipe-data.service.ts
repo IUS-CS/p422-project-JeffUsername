@@ -21,14 +21,13 @@ export class RecipeDataService {
 
   private url = '/v1/recipe';
   
-  public getRandom(): Observable<string[]> {
+  public getRandom(): Observable<string[]> { //random get
     let temp = this.url+'/random';
     
     return this.http.get<string[]>(temp);
   }
   public getRecipe(name: string): Observable<Recipe> { //gets name of individual recipe
     let temp = this.url+'/name';
-    
     return this.http.get<Recipe>(`${temp}/${name}`);
   }
   
@@ -37,26 +36,24 @@ export class RecipeDataService {
     return this.http.get<string[]>(this.url);
   }
 
-  public getRecipeNamesbyName(name: string): Observable<string[]> { //is a dumb work around solution
+  public getRecipeNamesbyName(name: string): Observable<string[]> { //is a dumb work around solution for a recipe
     return this.http.get<string[]>(`${this.url}/names/${name}`);
   }
 
-  public getRecipeNamesbyType(type: string): Observable<string[]> { //
-    //let temp = this.url+'/type/';//this.http.get<Recipe>(`${temp}/${name}`);
-    //console.log(temp);
+  public getRecipeNamesbyType(type: string): Observable<string[]> { //by type
     console.log(this.http.get<string[]>(this.url) + "this is what you want")
     return this.http.get<string[]>(`${this.url}/type/${type}`);
   }
 
-  public getRecipeNamesbyIngredient(primeIngredient: string): Observable<string[]> {
+  public getRecipeNamesbyIngredient(primeIngredient: string): Observable<string[]> { //by prime ingredient
     //console.log(this.url);
     //let temp = this.url+'/primeIngredient/'+primeIngredient;
     return this.http.get<string[]>(`${this.url}/primeIngredient/${primeIngredient}`);
   }
 
-  public getRecipeNamesbyTypeandIgred(type: string, primeIngredient: string ): Observable<string[]> {
-    //console.log(this.url);
-    //let temp = this.url+'/type/'+type+'/primeIngredient/'+primeIngredient;
+  public getRecipeNamesbyTypeandIgred(type: string, primeIngredient: string ): Observable<string[]> { //why am I doing this the name is right there to the left
+    
     return this.http.get<string[]>(this.url+'/type/'+type+'/primeIngredient/'+primeIngredient);
   }
+
 }

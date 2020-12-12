@@ -1,20 +1,19 @@
+<div class="card">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" novalidate>
+    <h3>Search by Primary Ingredient: </h3>
+    <p>
+      <label for="primeIngredient">Primary Ingredient </label>
+      <input type="text" id="primeIngredient" name="primeIngredient" formControlName="primeIngredient">
+    </p>
+    <p>
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </p>
+  </form>
 
-
-
-<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" novalidate>
- 
-  <p>
-    <label for="primeIngredient">Primary Ingredient </label>
-    <input type="text" id="primeIngredient" name="primeIngredient" formControlName="primeIngredient">
-  </p>
-  <p>
-    <button type="submit" >Submit</button>
-  </p>
-</form>
-
-<div *ngIf = "show">
-    <h1>Recipes</h1>
-    <ul *ngFor="let recipeByIngredName of (recipeByIngredNames | async)">
-      <li><a [routerLink]="['/recipe', recipeByIngredName]">{{recipeByIngredName.name}}</a></li>
-    </ul>
+  <div *ngIf = "show">
+      <h1>Recipes</h1>
+      <ul *ngFor="let recipeByIngredName of (recipeByIngredNames | async)">
+        <li><a [routerLink]="['/recipe', recipeByIngredName]">{{recipeByIngredName.name}}</a></li>
+      </ul>
+  </div>
 </div>

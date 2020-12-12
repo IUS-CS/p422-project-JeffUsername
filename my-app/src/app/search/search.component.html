@@ -1,26 +1,32 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Search by Recipe: </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul ngbNav routerLinkActive="active">
-        <li  ngbNavItem="select">
-          <a ngbNavLinkclass class="nav-link" routerLink="/select">All</a>
-        </li>
-        <li  ngbNavItem="select-by-name">
-          <a ngbNavLinkclass class="nav-link" routerLink="/select-by-name">Name</a>
-        </li>
-        <li ngbNavItem="select-by-type">
-          <a gbNavLinkclass class="nav-link" routerLink="/select-by-type">Type</a>
-        </li>
-        <li ngbNavItem="select-by-ingredient">
-            <a gbNavLinkclass class="nav-link" routerLink="/select-by-ingredient">Primay Ingredient</a>
-          </li>
-          <li ngbNavItem="select-by-type-ingred">
-            <a gbNavLinkclass class="nav-link" routerLink="/select-by-type-ingred">Type and Primay Ingredient</a>
-          </li>
-      </ul>
+<div class="container">
+  <div class="row">
+    <div class="card">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="#">Search by Recipe: </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul ngbNav routerLinkActive="active">
+              <li  ngbNavItem="select">
+                <a ngbNavLinkclass class="nav-link" routerLink="/select">All</a>
+              </li>
+              <li  ngbNavItem="select-by-name">
+                <a ngbNavLinkclass class="nav-link" routerLink="/select-by-name">Name</a>
+              </li>
+              <li ngbNavItem="select-by-type">
+                <a gbNavLinkclass class="nav-link" routerLink="/select-by-type">Type</a>
+              </li>
+              <li ngbNavItem="select-by-ingredient">
+                  <a gbNavLinkclass class="nav-link" routerLink="/select-by-ingredient">Primay Ingredient</a>
+                </li>
+                <li ngbNavItem="select-by-type-ingred">
+                  <a gbNavLinkclass class="nav-link" routerLink="/select-by-type-ingred">Type and Primay Ingredient</a>
+                </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
-  </nav>
+    </div>
