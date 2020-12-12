@@ -1,15 +1,17 @@
 <!-- <p>recipe works!</p> -->
-<div *ngIf="!selectedRecipe">
+<!-- <div *ngIf="!selectedRecipe">
     No recipe selected!
-  </div>
-  
+  </div> -->
+  <div class="card">
   <div *ngIf="selectedRecipe">
     <h1>Recipe Name: {{(selectedRecipe | async)?.name}}</h1>
   
-    <!-- <div><span class="inline-title">Name:</span> {{(selectedRecipe | async)?.name}}</div> -->
-    <div><span class="inline-title">Type: </span> {{(selectedRecipe | async)?.type}}</div>
-    <div><span class="inline-title">Primary Ingredient: </span> {{(selectedRecipe | async)?.primeIngredient}}</div>
-    <div><span class="inline-title"></span> {{(selectedRecipe | async)?.recipeBody}}</div>
+    
+    <div><h2><span class="inline-title">Type: </span> {{(selectedRecipe | async)?.type}}</h2></div>
+    <div><h2><span class="inline-title">Primary Ingredient: </span> {{(selectedRecipe | async)?.primeIngredient}}</h2></div>
+    <div><h2>Recipe Details:</h2></div>
+    <div><h3><span class="inline-title"></span> {{(selectedRecipe | async)?.recipeBody}}</h3></div>
 
-    <button type="button" class="btn btn-secondary" (click)="goBack()">Back</button>
-  </div>
+    <button type="submit" class="btn btn-primary" (click)="goBack()">Back</button>
+</div>
+</div>
