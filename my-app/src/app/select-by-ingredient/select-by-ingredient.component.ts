@@ -32,7 +32,7 @@ export class SelectByIngredientComponent implements OnInit {
   ngOnInit(): void {
     let temp;
     let temp2 =this.primeIngredient()
-    console.log(temp2.value)
+    //console.log(temp2.value)
     this.recipeByIngredNames =this.recipeDataService.getRecipeNamesbyIngredient(temp2.value);
 
     console.log("here");

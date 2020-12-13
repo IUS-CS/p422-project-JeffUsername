@@ -12,6 +12,7 @@ import { SelectByIngredientComponent } from './select-by-ingredient/select-by-in
 import { SelectByTypeIngredComponent } from './select-by-type-ingred/select-by-type-ingred.component';
 import { SelectByNameComponent } from './select-by-name/select-by-name.component';
 
+
 const routes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: 'select', component: SelectComponent},

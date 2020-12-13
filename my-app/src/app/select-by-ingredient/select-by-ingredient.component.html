@@ -9,11 +9,11 @@
       <input class="btn btn-primary" type="submit" value="Submit">
     </p>
   </form>
-
+  
   <div *ngIf = "show">
-      <h1>Recipes</h1>
-      <ul *ngFor="let recipeByIngredName of (recipeByIngredNames | async)">
-        <li><a [routerLink]="['/recipe', recipeByIngredName]">{{recipeByIngredName.name}}</a></li>
-      </ul>
-  </div>
+    <h1>Recipes</h1>
+    <ul *ngFor="let recipeByIngredName of (recipeByIngredNames | async)">
+      <li><a [routerLink]="['/recipe', recipeByIngredName]">{{recipeByIngredName.name}}</a></li>
+    </ul>
+</div>
 </div>

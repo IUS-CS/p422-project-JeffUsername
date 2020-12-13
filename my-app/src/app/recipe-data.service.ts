@@ -4,10 +4,11 @@ import {Observable} from 'rxjs';
 
 export class Recipe {
   name: string;
-  primeIngredient: string
+  primeIngredient: string;
   type: string;
-  recipeBody: string
-}
+  recipeBody: string;
+};
+
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,10 @@ export class RecipeDataService {
   public getRecipeNamesbyTypeandIgred(type: string, primeIngredient: string ): Observable<string[]> { //why am I doing this the name is right there to the left
     
     return this.http.get<string[]>(this.url+'/type/'+type+'/primeIngredient/'+primeIngredient);
+  }
+
+  public addRecipe(add: Recipe): Observable<any> {
+    return this.http.post(`${this.url}`, add);
   }
 
 }
