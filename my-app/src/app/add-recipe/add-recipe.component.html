@@ -1,7 +1,10 @@
 <div class="card">
   <h3>Add Recipe</h3>
   <form [formGroup]="newRecipe" (ngSubmit)="onSubmit()">
-    <input type="text" class="form-control" id="name" formControlName ="name" placeholder="Name">
+    <div>
+      <input type="text" class="form-control" id="name" formControlName ="name" placeholder="Name">
+      
+    </div>
     <input type="text" class="form-control" id="type" formControlName ="type" placeholder="Type: ex: Mediterranean, South Western">
     <input type="text" class="form-control" id= "primeIngredient" formControlName ="primeIngredient" placeholder="The Primay Ingredient: (that means one) ex: Chicken, Tofu, Human">
 
@@ -10,5 +13,6 @@
       <textarea class="form-control" formControlName ="recipeBody" id="exampleFormControlTextarea1" rows="10"></textarea>
     </div>
   <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
+  
 </form>
 </div>
